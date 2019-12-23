@@ -41,13 +41,18 @@ class TestListManipulator(unittest.TestCase):
     def testMin(self):
         testlist = [-2, -7, -9, 0, 4, 6, -1, 7, 3, 2]  # random set of positive and negative integers
         list = ListManipulator(testlist)
-        self.assertEqual(list.min(), -9)
+        self.assertEqual(list.min(), -9)  # smallest number in the list is -9, so it should return -9
         testlist = []
         list = ListManipulator(testlist)
-        self.assertEqual(list.min(), None)
+        self.assertEqual(list.min(), None)  # when there are no items in the list, it should return None
 
     def testMax(self):
-        pass
+        testlist = [-5, 4, -2, 9, 8, -7, -4, -6, -9, 10]  # random set of positive and negative integers
+        list = ListManipulator(testlist)
+        self.assertEqual(list.max(), 10)  # the largest number in the set is 10, should return 10
+        testlist = []
+        list = ListManipulator(testlist)
+        self.assertEqual(list.max(), None)  # when there are no items in the list, it should return None
 
     def testRemove(self):
         pass
