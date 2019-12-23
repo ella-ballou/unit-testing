@@ -1,3 +1,7 @@
+# ella ballou
+# software development fundamentals
+# programming lab 10
+
 import unittest
 
 
@@ -55,7 +59,14 @@ class TestListManipulator(unittest.TestCase):
         self.assertEqual(list.max(), None)  # when there are no items in the list, it should return None
 
     def testRemove(self):
-        pass
+        testlist = [2, 1, 5, 1, 1, 10, -5, 10, 0, 8]  # original list, random set
+        list = ListManipulator(testlist)
+        list.remove(1)  # removes all 1's from the list
+        self.assertEqual(list.list, [2, 5, 10, -5, 10, 0, 8])  # the list should be equal to the testlist w all 1's removed
+        testlist = []  # a list with no values
+        list = ListManipulator(testlist)
+        list.remove(0)  # removes all 0's from that blank list (does nothing)
+        self.assertEqual(list.list, [])  # list should stay empty
 
 
 unittest.main()
